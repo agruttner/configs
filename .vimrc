@@ -1,54 +1,76 @@
-" set UTF-8 encoding
-set enc=utf-8
+set enc=utf-8									" set UTF-8 encoding
 set fenc=utf-8
 set termencoding=utf-8
-" disable vi compatibility (emulation of old bugs)
-set nocompatible
-" use indentation of previous line
-set autoindent
-" use intelligent indentation for C
-set smartindent
-" configure tabwidth and insert spaces instead of tabs
-set tabstop=4        " tab width is 4 spaces
-set shiftwidth=4     " indent also with 4 spaces
-"set expandtab        " expand tabs to spaces
-" wrap lines at 120 chars. 80 is somewaht antiquated with nowadays displays.
-"set textwidth=120
+set nocompatible								" disable vi compatibility
+
+" ----------------------------------------------------------------------------
+" File Handling
+" ----------------------------------------------------------------------------
+set directory^=$HOME/.vim/swp/ 					" Use a single swap directory
+try												" Persistent undo dir
+    set undodir=~/.vim/undo
+    set undolevels=1000
+    set undofile
+endtry
+
+" ----------------------------------------------------------------------------
+" User Interface
+" ----------------------------------------------------------------------------
+set noerrorbells        						" don't make noise
+set showcmd             						" Show (partial) command in status line
+set ruler               						" Show line & column number
+set nolazyredraw
+set whichwrap+=<,>,h,l  						" arrow keys wrap around line
+set wildmode=longest,list,full
+set wildmenu            						" For easier tab completion on command line
+"set number										" turn on line numbers
+
+syntax on										" turn syntax highlighting on
+set t_Co=256									" use 256 colours
+set background=dark								" dark background
+
+" ----------------------------------------------------------------------------
+" Formatting
+" ----------------------------------------------------------------------------
+set autoindent									" use indentation of previous line
+set smartindent									" use intelligent indentation for C
+set tabstop=4        							" tab width is 4 spaces
+set shiftwidth=4     							" indent also with 4 spaces
+"set expandtab        							" expand tabs to spaces
+"set textwidth=120								" wrap lines at 120 chars. 
 "set wrapmargin=2
+set formatoptions=c,q,r         " c: Auto-wrap comments to textwidth
+                                " q: Allow formatting comments with "gq".
+                                " r: Automatically insert current comment char
 
-" turn syntax highlighting on
-set t_Co=256
-syntax on
-"colorscheme pablo
-set background=dark
+set showmatch									" highlight matching braces
+set matchtime=1									" for 1/10th of a second
 
-" turn line numbers on
-"set number
-" highlight matching braces
-set showmatch
-" intelligent comments
-set comments=sl:/*,mb:\ *,elx:\ */
+set comments=sl:/*,mb:\ *,elx:\ */				" intelligent comments
 
-" Enable mouse interaction
-set mouse=a
+" ----------------------------------------------------------------------------
+"  Mouse & Keyboard
+" ----------------------------------------------------------------------------
+set mouse=a         							" Enable the use of the mouse.
+set mousehide       							" Hide the mouse while typing
+map <MouseMiddle> <esc>*p       				" The mouse to paste unformatted block of code
+set backspace=indent,eol,start  				" Influences the working of backspaces
+
+" ----------------------------------------------------------------------------
+" Tabs and Windows
+" ----------------------------------------------------------------------------
+" Smart way to move btw. windows
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
 
 " C-tags generate the tag file of the current directory
 nmap ,t :!(cd %:p:h;ctags *.[ch])&
 
-" setup cscope
-cs add $CSCOPE_DB
-
-nmap <M-Space>s :cs find s <C-R>=expand("<cword>")<CR><CR>
-nmap <M-Space>g :cs find g <C-R>=expand("<cword>")<CR><CR>
-nmap <M-Space>c :cs find c <C-R>=expand("<cword>")<CR><CR>
-nmap <M-Space>t :cs find t <C-R>=expand("<cword>")<CR><CR>
-nmap <M-Space>e :cs find e <C-R>=expand("<cword>")<CR><CR>
-nmap <M-Space>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
-nmap <M-Space>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-nmap <M-Space>d :cs find d <C-R>=expand("<cword>")<CR><CR>
-
 " switch between header/source with F4
-map <F4> :e %:p:s,.h$,.X123X,:s,.cc$,.h,:s,.X123X$,.cc,<CR>
+"map <F4> :e %:p:s,.h$,.X123X,:s,.cc$,.h,:s,.X123X$,.cc,<CR>
+map gh :e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>
 " recreate tags file with F5
 map <F5> :!ctags -R ?~@~Sc++-kinds=+p ?~@~Sfields=+iaS ?~@~Sextra=+q .<CR>
 " create doxygen comment
@@ -107,8 +129,13 @@ augroup resCur
 augroup END
 "---------------------------------------------------------------
 
-set vb t_vb=
-set incsearch hlsearch
+" ----------------------------------------------------------------------------
+" Search
+" ----------------------------------------------------------------------------
+set incsearch 							" highlight search matches
+set hlsearch							" show search matches as you type
+set ignorecase							" ignore case in search patterns
+set smartcase							" override ignore case if pattern contains capitals
 " Press space to clear search highlighting and any message already displayed.
 nnoremap <silent> <Space> :silent noh<Bar>echo<CR>
 
@@ -117,12 +144,13 @@ nnoremap <silent> <Space> :silent noh<Bar>echo<CR>
 """"""""""""""""""""""""""""""
 set laststatus=2
 set statusline=
-set statusline+=%-3.3n\ " buffer number
+set statusline+=%-3.3n " buffer number
 set statusline+=%f\ " filename
 set statusline+=%h%m%r%w " status flags
 set statusline+=\[%{strlen(&ft)?&ft:'none'}] " file type
+"set statusline+=%#warningmsg#
 set statusline+=%= " right align remainder
-set statusline+=0x%-8B " character value
+set statusline+=%b,0x%-8B " character value
 set statusline+=%-14(%l,%c%V%) " line, character
 set statusline+=%<%P " file position
 
