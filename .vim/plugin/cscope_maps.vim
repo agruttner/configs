@@ -88,8 +88,10 @@ if has("cscope")
     " go back to where you were before the search.  
     "
 
-    nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>	
-    nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>	
+    "nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>	
+    nmap gr :cs find s <C-R>=expand("<cword>")<CR><CR>	
+    "nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>	
+    nmap gd :cs find g <C-R>=expand("<cword>")<CR><CR>	
     nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>	
     nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>	
     nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>	
@@ -107,9 +109,9 @@ if has("cscope")
     "    nmap <C-@>s <C-W><C-S> :cs find s <C-R>=expand("<cword>")<CR><CR>	
 
     "nmap <C-@>s :scs find s <C-R>=expand("<cword>")<CR><CR>	
-    nmap gr :scs find s <C-R>=expand("<cword>")<CR><CR>	
+    nmap grh :scs find s <C-R>=expand("<cword>")<CR><CR>	
     "nmap <C-@>g :scs find g <C-R>=expand("<cword>")<CR><CR>	
-    nmap gd :scs find g <C-R>=expand("<cword>")<CR><CR>	
+    nmap gdh :scs find g <C-R>=expand("<cword>")<CR><CR>	
     nmap <C-@>c :scs find c <C-R>=expand("<cword>")<CR><CR>	
     nmap <C-@>t :scs find t <C-R>=expand("<cword>")<CR><CR>	
     nmap <C-@>e :scs find e <C-R>=expand("<cword>")<CR><CR>	
@@ -124,8 +126,10 @@ if has("cscope")
     " (Note: you may wish to put a 'set splitright' in your .vimrc
     " if you prefer the new window on the right instead of the left
 
-    nmap <C-@><C-@>s :vert scs find s <C-R>=expand("<cword>")<CR><CR>
-    nmap <C-@><C-@>g :vert scs find g <C-R>=expand("<cword>")<CR><CR>
+    "nmap <C-@><C-@>s :vert scs find s <C-R>=expand("<cword>")<CR><CR>
+    nmap grv :vert scs find s <C-R>=expand("<cword>")<CR><CR>
+    "nmap <C-@><C-@>g :vert scs find g <C-R>=expand("<cword>")<CR><CR>
+    nmap gdv :vert scs find g <C-R>=expand("<cword>")<CR><CR>
     nmap <C-@><C-@>c :vert scs find c <C-R>=expand("<cword>")<CR><CR>
     nmap <C-@><C-@>t :vert scs find t <C-R>=expand("<cword>")<CR><CR>
     nmap <C-@><C-@>e :vert scs find e <C-R>=expand("<cword>")<CR><CR>

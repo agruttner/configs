@@ -70,7 +70,9 @@ nmap ,t :!(cd %:p:h;ctags *.[ch])&
 
 " switch between header/source with F4
 "map <F4> :e %:p:s,.h$,.X123X,:s,.cc$,.h,:s,.X123X$,.cc,<CR>
-map gh :e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>
+map gh :e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>			"switch between header and source
+map ghh :split %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>	"same but with horizontal split
+map ghv :vs %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>		"same but with vertical split
 " recreate tags file with F5
 map <F5> :!ctags -R ?~@~Sc++-kinds=+p ?~@~Sfields=+iaS ?~@~Sextra=+q .<CR>
 " create doxygen comment
