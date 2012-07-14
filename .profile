@@ -1,8 +1,5 @@
 test -r /sw/bin/init.sh && . /sw/bin/init.sh
 #PS1='[\D{%d.%m.%y} \t \u:\w ]$ '
-if [ -f "$HOME/.aliases" ]; then
-	. "$HOME/.aliases"
-fi
 if [ -f "$HOME/.bash_ps1" ]; then
 	. "$HOME/.bash_ps1"
 fi
