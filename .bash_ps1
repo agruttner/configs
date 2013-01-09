@@ -6,18 +6,19 @@
 
 fill="--- "
 
-source .bash_colours
+source $HOME/.bash_colours
 status_style=$Color_Off$IBlack 
 prompt_style=$Color_Off
 command_style=$Color_Off$BWhite 
 host_style=$Color_Off$IYellow		
 cmd_end=$Color_Off']\$'"$command_style "
 
-if [ -f /opt/local/etc/bash_completion.d/git ]; then
-	source "/opt/local/etc/bash_completion.d/git"
+if [ -f /opt/local/share/git-core/git-prompt.sh ]; then
+    . /opt/local/share/git-core/git-prompt.sh
 fi
 
 GIT_PS1_SHOWSTASHSTATE=1	
+GIT_PS1_SHOWUPSTREAM="auto"
 
 # Reset color for command output
 # (this one is invoked every time before a command is executed):
