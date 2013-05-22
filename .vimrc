@@ -34,10 +34,10 @@ set background=dark								" dark background
 " ----------------------------------------------------------------------------
 set autoindent									" use indentation of previous line
 set smartindent									" use intelligent indentation for C
-set tabstop=4        							" tab width is 4 spaces
-set shiftwidth=4     							" indent also with 4 spaces
-"set expandtab        							" expand tabs to spaces
-"set textwidth=120								" wrap lines at 120 chars. 
+set tabstop=2        						" tab width is 2 spaces
+set shiftwidth=2     						" indent also with 2 spaces
+set expandtab        						" expand tabs to spaces
+set textwidth=80								" wrap lines at 80 chars. 
 "set wrapmargin=2
 set formatoptions=c,q,r         " c: Auto-wrap comments to textwidth
                                 " q: Allow formatting comments with "gq".
@@ -188,3 +188,11 @@ function! Find(name)
   execute ":e ".l:line
 endfunction
 command! -nargs=1 Find :call Find("<args>")
+
+""""""""""""""""""""""""""""""
+" => java completion
+""""""""""""""""""""""""""""""
+if has("autocmd")
+	autocmd Filetype java helptags /usr/share/vim/vimfiles/doc
+endif
+

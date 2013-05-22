@@ -33,5 +33,6 @@ autocmd LocationChange www\.google\.com/reader :fmap! -v i j J k K n p m s v A r
 "qmark r google.com/reader/
 "qmark t toodledo.com
 "qmark w google.com/a/goindex.com
+qmark i localhost:8080
 
 " vim: set ft=vimperator:
