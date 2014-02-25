@@ -34,6 +34,7 @@ set background=dark								" dark background
 " ----------------------------------------------------------------------------
 set autoindent									" use indentation of previous line
 set smartindent									" use intelligent indentation for C
+au! FileType python setl nosmartindent " turn off smart indentation for python files
 set tabstop=2        						" tab width is 2 spaces
 set shiftwidth=2     						" indent also with 2 spaces
 set expandtab        						" expand tabs to spaces
