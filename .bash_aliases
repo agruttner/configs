@@ -1,25 +1,24 @@
 # Shortcuts to folders
 alias wk='cd $HOME/Source/com.tappmo'
-alias fr='cd $HOME/Source/com.tappmo/fender/WebContent/WEB-INF'
-alias aws='cd $HOME/Source/com.tappmo/ops/aws'
-alias vag='cd $OPS_HOME/vagrant/cluster'
+alias ginx='cd $HOME/Source/ginx'
 
 # Building
 alias mk='mvn clean install -DskipTests'
-alias mks='mvn clean install -pl server/fender -pl server/atom -pl server/deebo -pl server/hermes -DskipTests'
+alias mks='wk;mvn install -pl server/fender -pl server/atom -pl server/deebo -pl server/hermes -DskipTests'
 alias mki='mvn clean install -Dintegration=launch'
-alias mka='mvn clean install -pl server/atom -am -DskipTests'
-alias mkd='mvn clean install -pl server/deebo -am -DskipTests'
-alias mkf='mvn clean install -pl server/fender -am -DskipTests'
+alias mka='wk;mvn install -pl server/atom -DskipTests'
+alias mkd='wk;mvn install -pl server/deebo -DskipTests'
+alias mkf='wk;mvn install -pl server/fender -DskipTests'
+alias mkfa='wk;mvn install -pl server/api/fender -DskipTests'
 
 # Running
 alias runa='$TAPPMO_HOME/scripts/manage_server.py --server atom --action start'
 alias runh='$TAPPMO_HOME/scripts/manage_server.py --server hermes --action start'
-alias runf='$TAPPMO_HOME/scripts/manage_server.py --server fender --action start --fenderJarMode false'
+alias runf='$TAPPMO_HOME/scripts/manage_server.py --server fender --action start'
 alias runr='$TAPPMO_HOME/scripts/manage_server.py --server raptor --action start'
 alias runav='$TAPPMO_HOME/scripts/manage_server.py --server atom --action start --log_to_stdout'
 alias runhv='$TAPPMO_HOME/scripts/manage_server.py --server hermes --action start --log_to_stdout'
-alias runfv='$TAPPMO_HOME/scripts/manage_server.py --server fender --action start --fenderJarMode false --log_to_stdout'
+alias runfv='$TAPPMO_HOME/scripts/manage_server.py --server fender --action start --log_to_stdout'
 alias runrv='$TAPPMO_HOME/scripts/manage_server.py --server raptor --action start --log_to_stdout'
 alias stopa='$TAPPMO_HOME/scripts/manage_server.py --server atom --action stop'
 alias stoph='$TAPPMO_HOME/scripts/manage_server.py --server hermes --action stop'
@@ -31,7 +30,7 @@ alias runv='runav; runfv; runrv; runhv'
 alias stop='stopa; stopd; stopf; stopr; stoph'
 
 #run fake data
-alias fd='wk;$TAPPMO_HOME/fakedata/src/reinit_data --host http://localhost:8081 --secure_rpc_url http://localhost:8082'
+alias fd='wk;$TAPPMO_HOME/fakedata/src/reinit_data --host http://localhost:8081 --secure_rpc_url http://localhost:8082 --mode dev'
 
 #git
 alias gts='git status'
@@ -42,19 +41,23 @@ alias gtb='git branch'
 alias gtm='git merge master'
 alias gta='git add -A'
 alias gtcm='git commit -a'
-function gtc() {
-  git checkout $@
-}
+alias gtc='git checkout'
 
 # Other
-alias mr='$HOME/Source/com.tappmo/server/src/tools/make_receipt.py --host http://localhost:8080 --consumer_id tom --pin 88876 --store_id gap'
 alias tw='vim $HOME/Dropbox/todo_work.txt'
 alias th='vim $HOME/Dropbox/todo_home.txt'
 alias ta='vim $HOME/Dropbox/todo_apartment.txt'
 alias tb='vim $HOME/Dropbox/to_buy.txt'
 alias update_licenses='mvn license:add-third-party -Dlicense.useMissingFile=true -Dlicense.excludedGroups="com.goindex"   -Dlicense.outputDirectory=license -Dlicense.missingFile=license/THIRD-PARTY.properties'
 alias mqh='history | grep mq'
+alias lsl='ls -l'
 
 function mq() {
-  mongo 10.0.201.121:27017/goindex --eval $1
+  # prod:
+  #mongo 10.0.201.121:27017/goindex --eval $1
+  # canary:
+  mongo 10.0.201.179:27017/goindex --eval $1
 }
+
+#launch IntelliJ
+alias lij='/Applications/IntelliJ\ IDEA\ 13\ CE.app/Contents/MacOS/idea > /dev/null 2>&1 &'
