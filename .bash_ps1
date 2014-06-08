@@ -13,8 +13,8 @@ command_style=$Color_Off$BWhite
 host_style=$Color_Off$IYellow		
 cmd_end=$Color_Off']\$'"$command_style "
 
-if [ -f /opt/local/share/git-core/git-prompt.sh ]; then
-    . /opt/local/share/git-core/git-prompt.sh
+if [ -f $HOME/.git-prompt.sh ]; then
+    . $HOME/.git-prompt.sh
 fi
 
 GIT_PS1_SHOWSTASHSTATE=1	
