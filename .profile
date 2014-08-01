@@ -9,6 +9,10 @@ fi
 # turn on vi keybindings for command line
 set -o vi
 
+# get all the boxen goodness
+[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
+source /opt/boxen/data/virturalenvs/goindex/bin/activate
+
 AWS="$HOME/Source/aws"
 
 export TOMCAT_HOME=/usr/local/Cellar/tomcat/7.0.34/libexec
