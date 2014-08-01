@@ -3,7 +3,7 @@ alias wk='cd $HOME/Source/com.tappmo'
 alias ginx='cd $HOME/Source/ginx'
 
 # Building
-alias mk='mvn clean install -DskipTests'
+alias mk='mvn clean install -T 1C -DskipTests'
 alias mks='wk;mvn install -pl server/fender -pl server/atom -pl server/deebo -pl server/hermes -DskipTests'
 alias mki='mvn clean install -Dintegration=launch'
 alias mka='wk;mvn install -pl server/atom -DskipTests'
