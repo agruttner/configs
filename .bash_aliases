@@ -1,6 +1,7 @@
 # Shortcuts to folders
 alias wk='cd $HOME/Source/com.tappmo'
 alias ginx='cd $HOME/Source/ginx'
+alias ios='cd $HOME/Source/ios/projects/libraries/IXBeanstalkLib'
 
 # Building
 alias mk='mvn clean install -T 1C -DskipTests'
@@ -41,6 +42,7 @@ alias gtb='git branch'
 alias gtm='git merge master'
 alias gta='git add -A'
 alias gtcm='git commit -a'
+alias gtcma='gta && git commit --amend'
 alias gtc='git checkout'
 
 # Other
@@ -61,3 +63,6 @@ function mq() {
 
 #launch IntelliJ
 alias lij='/Applications/IntelliJ\ IDEA\ 13\ CE.app/Contents/MacOS/idea > /dev/null 2>&1 &'
+
+#ios
+alias sync_revellib='rsync -r ~/Source/ios/projects/libraries/IXBeanstalkLib/build/sym/Index ~/Source/revelExample/lib/'
