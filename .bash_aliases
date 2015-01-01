@@ -2,6 +2,7 @@
 alias wk='cd $HOME/Source/com.tappmo'
 alias ginx='cd $HOME/Source/ginx'
 alias ios='cd $HOME/Source/ios/projects/libraries/IXBeanstalkLib'
+alias nfs='cd /Volumes/NFS/'
 
 # Building
 alias mk='mvn clean install -T 1C -DskipTests'
@@ -66,3 +67,5 @@ alias lij='/Applications/IntelliJ\ IDEA\ 13\ CE.app/Contents/MacOS/idea > /dev/n
 
 #ios
 alias sync_revellib='rsync -r ~/Source/ios/projects/libraries/IXBeanstalkLib/build/sym/Index ~/Source/revelExample/lib/'
+
+alias btst='ssh -L 8888:localhost:8888 ar@92.222.125.252'
