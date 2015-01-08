@@ -11,7 +11,6 @@ set -o vi
 
 # get all the boxen goodness
 [ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
-source /opt/boxen/data/virturalenvs/goindex/bin/activate
 
 AWS="$HOME/Source/aws"
 
