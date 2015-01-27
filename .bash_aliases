@@ -2,6 +2,7 @@
 alias wk='cd $HOME/Source/com.tappmo'
 alias ginx='cd $HOME/Source/ginx'
 alias ios='cd $HOME/Source/ios/projects/libraries/IXBeanstalkLib'
+alias ops='cd $HOME/Source/ops'
 alias nfs='cd /Volumes/NFS/'
 
 # Building
