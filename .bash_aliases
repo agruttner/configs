@@ -46,6 +46,7 @@ alias gta='git add -A'
 alias gtcm='git commit -a'
 alias gtcma='gta && git commit --amend'
 alias gtc='git checkout'
+alias ggi='git grep -i'
 
 # Other
 alias tw='vim $HOME/Dropbox/todo_work.txt'
