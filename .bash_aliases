@@ -37,7 +37,8 @@ alias fd='wk;$TAPPMO_HOME/fakedata/src/reinit_data --host http://localhost:8081 
 
 #git
 alias gts='git status'
-alias gtd='git diff origin/master'
+alias gtd='git diff'
+alias gtdo='git diff origin/master'
 alias gtds='git diff origin/master --stat'
 alias gtp='git pull origin master; git fetch'
 alias gtb='git branch'
@@ -65,7 +66,7 @@ function mq() {
 }
 
 #launch IntelliJ
-alias lij='/Applications/IntelliJ\ IDEA\ 13\ CE.app/Contents/MacOS/idea > /dev/null 2>&1 &'
+alias lij='/Applications/IntelliJ\ IDEA\ 14\ CE.app/Contents/MacOS/idea > /dev/null 2>&1 &'
 
 #ios
 alias sync_revellib='rsync -r ~/Source/ios/projects/libraries/IXBeanstalkLib/build/sym/Index ~/Source/revelExample/lib/'
