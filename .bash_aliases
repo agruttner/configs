@@ -35,6 +35,7 @@ alias ta='vim $HOME/Dropbox/todo_apartment.txt'
 alias tb='vim $HOME/Dropbox/to_buy.txt'
 alias update_licenses='mvn license:add-third-party -Dlicense.useMissingFile=true -Dlicense.excludedGroups="com.goindex"   -Dlicense.outputDirectory=license -Dlicense.missingFile=license/THIRD-PARTY.properties'
 alias lsl='ls -l'
+alias rr='./scripts/remote_precommit.sh'
 
 #launch IntelliJ
 alias lij='/Applications/IntelliJ\ IDEA\ 14\ CE.app/Contents/MacOS/idea > /dev/null 2>&1 &'

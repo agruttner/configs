@@ -23,15 +23,9 @@ autocmd LocationChange .* fmapc
 " Gmail
 autocmd LocationChange mail\.google\.com/(mail|a)/ :fmap c / j k n p o u e x s l r a # [ ] z ? gi gs gt gd ga gc gl
 
-"Google Reader
-autocmd LocationChange www\.google\.com/reader :fmap! -v i j J k K n p m s v A r S N P X O gh ga gs gt gu u / ? t
-
 "qmarks
 "==============================================================================
-"qmark l dict.leo.org
-"qmark m https://mail.google.com/
-"qmark r google.com/reader/
-"qmark t toodledo.com
+qmark m https://mail.google.com/
 qmark w google.com/a/index.com
 qmark i localhost:8080
 
