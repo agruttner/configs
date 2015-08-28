@@ -1,7 +1,5 @@
 "3.4 (created: 2012/04/02 20:07:29)
 
-source! /Users/agruttner/.vimperatorrc.local
-
 noremap D d
 map d <C-d>
 noremap U u
