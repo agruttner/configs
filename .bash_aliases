@@ -20,7 +20,7 @@ alias tw='vim $HOME/Dropbox/todo_work.txt'
 alias th='vim $HOME/Dropbox/todo_home.txt'
 alias ta='vim $HOME/Dropbox/todo_apartment.txt'
 alias tb='vim $HOME/Dropbox/to_buy.txt'
-alias lsl='ls -l'
+alias lsl='ls -lh'
 
 # turns on color in less
 alias less='less -r'
