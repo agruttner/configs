@@ -1,3 +1,6 @@
 .vimperator/info/default/history-command
 .vimperator/info/**
 .vim/.netrwhist
+zsh/.zsh_history
+zsh/.zcompdump*
+.op
